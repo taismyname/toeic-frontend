@@ -64,3 +64,26 @@ export default Register;
 };
 
 export default Register;
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Đăng ký</h2>
+      <input
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        placeholder="Mật khẩu"
+      />
+      <button type="submit">Đăng ký</button>
+      <p>Đã có tài khoản? <Link to="/login">Đăng nhập</Link></p>
+    </form>
+  );
+};
+
+export default Register;
