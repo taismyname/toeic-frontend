@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:3000' // Sẽ cập nhật sau
+      '/api': 'https://toeic-backend.vercel.app/' // Thay bằng URL backend của mày
     }
   }
 });
