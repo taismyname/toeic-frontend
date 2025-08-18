@@ -6,8 +6,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      input: '/index.html' // Xác nhận entry point
-    }
+        input: '/index.html'
+      }
   },
   server: {
     proxy: {
