@@ -1,30 +1,16 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-const History = () => {
-  const [scores, setScores] = useState([]);
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      axios.get('/api/scores', {
-        headers: { Authorization: `Bearer ${token}` }
-      })
-        .then(res => setScores(res.data))
-        .catch(err => alert('Lỗi lấy lịch sử: ' + err.message));
-    }
-  }, []);
-
+const Home = () => {
   return (
     <div>
-      <h2>Lịch sử điểm</h2>
-      <ul>
-        {scores.map(s => (
-          <li key={s.id}>Điểm: {s.score} - Ngày: {new Date(s.date).toLocaleString()}</li>
-        ))}
-      </ul>
+      <h1>Luyện Thi TOEIC</h1>
+      <p>Chọn phần thi:</p>
+      <Link to="/quiz/listening"><button>Listening</button></Link>
+      <Link to="/quiz/reading"><button>Reading</button></Link>
+      <Link to="/history"><button>Lịch sử điểm</button></Link>
+      <Link to="/login"><button>Đăng nhập</button></Link>
     </div>
   );
 };
 
-export default History;
+export default Home;
