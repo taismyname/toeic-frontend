@@ -41,3 +41,26 @@ const Login = () => {
 };
 
 export default Login;
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Đăng nhập</h2>
+      <input
+        type="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        placeholder="Mật khẩu"
+      />
+      <button type="submit">Đăng nhập</button>
+      <p>Chưa có tài khoản? <Link to="/register">Đăng ký</Link></p>
+    </form>
+  );
+};
+
+export default Login;
