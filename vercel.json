@@ -15,8 +15,7 @@
       "dest": "/dist/index.html"
     },
     {
-      "src": "/assets/(.*\\.js)",
-      "src": "/dist/assets/(.*\\.js)", // Rewrite rõ ràng hơn
+      "src": "/assets/(.*)",
       "dest": "/dist/assets/$1",
       "headers": {
         "Content-Type": "application/javascript; charset=utf-8"
