@@ -17,7 +17,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'https://toeic-backend.vercel.app' // Thay bằng URL backend thật
+      '/api': 'toeic-backend.vercel.app' // Thay bằng URL backend thật
     }
   }
 });
