@@ -6,18 +6,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      input: '/index.html',
-      onwarn(warning, rollup) {
-        if (warning.code === 'UNRESOLVED_IMPORT') {
-          console.error('Unresolved import:', warning.importer, warning.source);
-        }
-        return true; // Keep going
-      }
+      input: '/index.html'
     }
   },
   server: {
     proxy: {
-      '/api': 'https://toeic-backend.vercel.app' // Thay bằng URL backend của mày
+      '/api': 'https://toeic-backend.vercel.app/' 
     }
   }
 });
