@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ['**/*.js', '**/*.jsx'], // Giữ dòng này để fix MIME type
+  assetsInclude: ['**/*.js', '**/*.jsx'], // Giữ để fix MIME type
   build: {
     outDir: 'dist',
     rollupOptions: {
