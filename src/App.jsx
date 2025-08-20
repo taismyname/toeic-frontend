@@ -7,7 +7,7 @@ import Quiz from './pages/Quiz.jsx';
 import History from './pages/History.jsx';
 
 function App() {
-  console.log('App rendered');
+  console.log('App component rendered'); // Debug log
   return (
     <Router>
       <div className="container">
