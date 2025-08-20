@@ -3,8 +3,14 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 
-createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
+console.log('Main.jsx loaded'); // Thêm log để debug
+const root = document.getElementById('root');
+if (!root) {
+  console.error('Root element not found');
+} else {
+  createRoot(root).render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}
