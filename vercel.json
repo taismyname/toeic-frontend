@@ -2,10 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
@@ -16,16 +12,12 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html",
-      "headers": {
-        "cache-control": "no-store, no-cache, must-revalidate, max-age=0"
-      }
+      "dest": "/index.html"
     },
     {
       "src": "/assets/(.*\\.js)",
       "dest": "/dist/assets/$1",
       "headers": {
-        "cache-control": "no-store, no-cache, must-revalidate, max-age=0",
         "Content-Type": "application/javascript; charset=utf-8"
       }
     }
