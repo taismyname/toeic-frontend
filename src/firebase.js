@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCG34WY1EM7UWlWK-Ko87Ewrw5hMD51Ib8",
+  apiKey: "AIzaSyCG34WY1EM7UWlWK-Ko87Ewrw5hMD51Ib8", 
   authDomain: "toeic-app-alpha.firebaseapp.com",
   projectId: "toeic-app-alpha",
   storageBucket: "toeic-app-alpha.firebasestorage.app",
