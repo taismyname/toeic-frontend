@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Quiz from './pages/Quiz';
-import History from './pages/History';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
+import Quiz from './pages/Quiz.jsx';
+import History from './pages/History.jsx';
 
 function App() {
   return (
