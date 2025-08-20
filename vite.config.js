@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ['**/*.js', '**/*.jsx'], // Giữ để fix MIME type
+  assetsInclude: ['**/*.js', '**/*.jsx'], // Đảm bảo giữ dòng này
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'toeic-backend.vercel.app'
+      '/api': 'https://toeic-backend.vercel.app'
     }
   }
 });
