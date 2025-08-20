@@ -7,17 +7,20 @@ import History from './components/History';
 import Login from './components/Login';
 
 function App() {
-  console.log('App component rendered'); 
+  console.log('App component rendered'); // Debug log
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     fetch('/api/questions')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
       .then(data => {
-        console.log('API data:', data); 
+        console.log('API data:', data); // Debug log
         setQuestions(data);
       })
-      .catch(error => console.error('API error:', error));
+      .catch(error => console.error('API error:', error)); // Debug log
   }, []);
 
   return (
