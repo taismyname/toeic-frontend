@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ['**/*.js', '**/*.jsx'], // Đảm bảo bao gồm file .js và .jsx
+  assetsInclude: ['**/*.js', '**/*.jsx'],
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -15,8 +15,8 @@ export default defineConfig({
         return true;
       },
       output: {
-        entryFileNames: 'assets/[name]-[hash].js', // Giữ hash để debug
-        assetFileNames: 'assets/[name]-[hash][extname]' // Đảm bảo asset
+        entryFileNames: 'assets/main.js', // Tạm disable hash
+        assetFileNames: 'assets/[name][extname]' // Không hash asset
       }
     }
   },
