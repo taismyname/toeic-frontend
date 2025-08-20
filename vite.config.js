@@ -6,12 +6,18 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      input: '/index.html'
+      input: '/index.html',
+      onwarn(warning, rollup) {
+        if (warning.code === 'UNRESOLVED_IMPORT' || warning.code === 'PARSE_ERROR') {
+          console.error('Build warning:', warning.message, 'File:', warning.loc?.file || 'unknown');
+        }
+        return true; // Keep going
+      }
     }
   },
   server: {
     proxy: {
-      '/api': 'https://toeic-backend.vercel.app/' 
+      '/api': 'https://toeic-backend.vercel.app' // Thay bằng URL backend thật
     }
   }
 });
