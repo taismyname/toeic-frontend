@@ -11,13 +11,13 @@ export default defineConfig({
         if (warning.code === 'UNRESOLVED_IMPORT' || warning.code === 'PARSE_ERROR') {
           console.error('Build warning:', warning.message, 'File:', warning.loc?.file || 'unknown');
         }
-        return true; // Keep going
+        return true;
       }
     }
   },
   server: {
     proxy: {
-      '/api': 'toeic-backend.vercel.app' // Thay bằng URL backend thật
+      '/api': 'toeic-backend.vercel.app'
     }
   }
 });
