@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ['**/*.js', '**/*.jsx'], // Giữ để hỗ trợ MIME type
+  assetsInclude: ['**/*.js', '**/*.jsx'], // Đảm bảo bao gồm file .js và .jsx
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -13,12 +13,16 @@ export default defineConfig({
           console.error('Build warning:', warning.message, 'File:', warning.loc?.file || 'unknown');
         }
         return true;
+      },
+      output: {
+        entryFileNames: 'assets/[name]-[hash].js', // Giữ hash để debug
+        assetFileNames: 'assets/[name]-[hash][extname]' // Đảm bảo asset
       }
     }
   },
   server: {
     proxy: {
-      '/api': 'toeic-backend.vercel.app'
+      '/api': 'https://toeic-backend.vercel.app'
     }
   }
 });
