@@ -7,6 +7,16 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/assets/main.jsx"></script>
+   <script type="module">
+  import { createRoot } from 'react-dom/client';
+  import App from './src/App.jsx';
+  import { BrowserRouter } from 'react-router-dom';
+
+  createRoot(document.getElementById('root')).render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+</script>
   </body>
 </html>
