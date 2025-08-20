@@ -16,7 +16,10 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/index.html",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate"
+      }
     }
   ]
 }
