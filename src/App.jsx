@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Home from './pages/Home.jsx';
@@ -11,6 +12,7 @@ function App() {
   return (
     <Router>
       <div className="container">
+        <h1>Test Render - Luyện Thi TOEIC</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
